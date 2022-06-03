@@ -17,7 +17,7 @@
 ## 概念结构设计
 
 ### ER图
-<img src="/资料/ER图.jpg" alt="图片alt" title="图片title">
+<img src="/资料/ER图.jpg" alt="图片alt" title="图片title" style="width: 65%">
 
 
 ### 关系模式
