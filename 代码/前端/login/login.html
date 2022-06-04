@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
     <link rel="stylesheet" href="login.css">
+    <script src="../config.js"></script>
     <script src="login.js"></script>
 </head>
 <body>
-    <form method="post">
-        <input type="text" name="userName" id="">
+    <form method="post" id="form">
+        <p>车位管理系统登录</p>
+        <input type="text" name="username" id="username">
         <br>
-        <input type="password" name="passWord" id="">
-        <input type="submit" name="" id="passWordSubmit">
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="button" id="passWordSubmit" value="登录">
     </form>
 </body>
 </html>
