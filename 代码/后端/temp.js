@@ -23,11 +23,10 @@ app.get('/database',(req, res)=>{
         if(err){
             console.log('err');
         }else{
-            // res.send(result[0].车牌号);
             res.setHeader("Content-type","text/html;charset=utf8");
-            res.write('<table>');
-            res.write('<tr><td>车辆编号</td>车牌号<td>车辆品牌</td>车身颜色<td>车主编号</td></tr>')
-            res.end('</table>');
+            res.setHeader('Access-Control-Allow-Origin','*');//允许所有来源访问 
+            res.setHeader('Access-Control-Allow-Method','POST,GET');//允许访问的方式
+            res.send(result);
         }
     })
 })
