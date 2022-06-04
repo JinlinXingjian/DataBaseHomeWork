@@ -5,6 +5,7 @@ const app = express()
 const cors = require('cors')
 app.use(cors())
 
+
 //表单处理中间件
 app.use(express.urlencoded({extended:false}))
 
