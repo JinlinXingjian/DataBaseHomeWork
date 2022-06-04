@@ -33,7 +33,7 @@ exports.regUser = (req, res) => {
       //判断sql语句是否成功
       if (err) return res.cc(err)
       //判断影响行数是否为一
-      if (results.affectedRows !== 1) return res.send({ state: '1', message: '注册用户失败，一会儿再试试八' })
+      if (results.length !== 1) return res.send({ state: '1', message: '注册用户失败，一会儿再试试八' })
       //成功的话
       res.cc('注册成功', 0)
     })
@@ -54,11 +54,10 @@ exports.logUser = (req, res) => {
   db.query(sql, userinfo.username, (err, results) => {
     //错误处理
     if (err) return res.cc(err)
-    console.log(results.length)
     if (results.length !== 1) res.cc('未知错误咯，安逸')
 
     const compareResult = bcrypt.compareSync(userinfo.password, results[0].password)
-    
+  
     if(!compareResult) return res.cc('登录失败')
 
     //登录成功后获取用户对象
@@ -72,7 +71,7 @@ exports.logUser = (req, res) => {
     res.send({
       state: 0,
       message: '登录成功',
-      token: 'Bearer' + tokenStr
+      token: 'Bearer ' + tokenStr
     })
   })
 
