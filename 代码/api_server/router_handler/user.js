@@ -37,14 +37,13 @@ exports.regUser = (req, res) => {
       //成功的话
       res.cc('注册成功', 0)
     })
-
   })
-
 }
 
 exports.logUser = (req, res) => {
   //判断为空的状态
   const userinfo = req.body
+  console.log(userinfo)
   if (!userinfo.username || !userinfo.password) {
     return res.cc('用户名或密码不能为空')
   }
@@ -54,7 +53,7 @@ exports.logUser = (req, res) => {
   db.query(sql, userinfo.username, (err, results) => {
     //错误处理
     if (err) return res.cc(err)
-    if (results.length !== 1) res.cc('未知错误咯，安逸')
+    if (results.length !== 1) res.cc('密码错误')
 
     const compareResult = bcrypt.compareSync(userinfo.password, results[0].password)
   

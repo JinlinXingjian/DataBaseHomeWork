@@ -12,6 +12,9 @@ app.use(cors())
 //表单处理中间件
 app.use(express.urlencoded({extended:false}))
 
+//json 处理的中间件
+app.use(express.json())
+
 
 //在路由之前封装 res.cc state默认值为1 err的值可能是错误对象，也可能是个string
 app.use((req, res, next) => {
