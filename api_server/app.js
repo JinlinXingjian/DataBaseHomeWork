@@ -23,7 +23,16 @@ app.use((req, res, next) => {
 
 //引入路由
 const userRouter = require('./router/user');
+const carsRouter = require('./router/cars')
+const masterRouter = require('./router/master')
+const PSpaceRouter = require('./router/ParkingSpaces')
+const logRouter = require('./router/log')
+
 app.use('/api', userRouter)
+app.use('/cars', carsRouter)
+app.use('/master', masterRouter)
+app.use('/PSpace', PSpaceRouter)
+app.use('/log', logRouter)
 
 
 //服务器启动

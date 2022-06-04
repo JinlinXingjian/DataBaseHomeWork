@@ -36,11 +36,25 @@ exports.regUser = (req, res) => {
       res.cc('注册成功', 0)
     })
 
-
   })
 
 }
 
 exports.logUser = (req, res) => {
-  res.send('login ok')
+  //判断为空的状态
+  const userinfo = req.body
+  if (!userinfo.username || !userinfo.password) {
+    return res.cc('用户名或密码不能为空')
+  }
+
+  const sql = 'select * from ';
+
+
+
+
+
+
+
+
+
 }
