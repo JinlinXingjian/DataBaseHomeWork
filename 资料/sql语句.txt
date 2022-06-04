@@ -21,7 +21,7 @@ create table 车辆(
 create table 车位(
 	车位编号 varchar(10),
     收费标准 smallint,
-    占用情况 bool,
+    占用情况 enum('是','否'),
     车主编号 varchar(10),
 	constraint 车位表主码 primary key(车位编号),
     constraint 车位表外码 foreign key(车主编号) references 车主(车主编号)

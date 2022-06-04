@@ -6,6 +6,8 @@ const port=80
 //创建mysql数据库链接
 const mysql=require('mysql');
 const Connection = require("mysql/lib/Connection");
+const { JSON } = require("mysql/lib/protocol/constants/types");
+const { json } = require("express/lib/response");
 const con_1=mysql.createConnection({
       host: 'localhost', // 主机名
       port: 3306,        // MySQL 默认端口为 3306
@@ -21,7 +23,11 @@ app.get('/database',(req, res)=>{
         if(err){
             console.log('err');
         }else{
-            res.send(result)
+            // res.send(result[0].车牌号);
+            res.setHeader("Content-type","text/html;charset=utf8");
+            res.write('<table>');
+            res.write('<tr><td>车辆编号</td>车牌号<td>车辆品牌</td>车身颜色<td>车主编号</td></tr>')
+            res.end('</table>');
         }
     })
 })
