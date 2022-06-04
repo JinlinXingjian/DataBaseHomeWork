@@ -35,13 +35,13 @@ app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
 const userRouter = require('./router/user');
 const carsRouter = require('./router/cars')
 const masterRouter = require('./router/master')
-const PSpaceRouter = require('./router/ParkingSpaces')
+const PSpacesRouter = require('./router/ParkingSpaces')
 const logRouter = require('./router/log')
 
 app.use('/api', userRouter)
 app.use('/cars', carsRouter)
 app.use('/master', masterRouter)
-app.use('/PSpace', PSpaceRouter)
+app.use('/PSpaces', PSpacesRouter)
 app.use('/log', logRouter)
 
 

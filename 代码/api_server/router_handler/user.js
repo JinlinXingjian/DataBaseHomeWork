@@ -33,7 +33,7 @@ exports.regUser = (req, res) => {
       //判断sql语句是否成功
       if (err) return res.cc(err)
       //判断影响行数是否为一
-      if (results.length !== 1) return res.send({ state: '1', message: '注册用户失败，一会儿再试试八' })
+      if (results.affectedRows !== 1) return res.send({ state: '1', message: '注册用户失败，一会儿再试试八' })
       //成功的话
       res.cc('注册成功', 0)
     })
