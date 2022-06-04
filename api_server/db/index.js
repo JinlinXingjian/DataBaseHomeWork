@@ -3,8 +3,8 @@ const mysql = require('mysql')
 const db = mysql.createPool({
   host:'127.0.0.1',
   user:'root',
-  password:'Ww553400',
-  database:'nodedemo'
+  password:'12345678',
+  database:'停车场车位管理数据库'
 })
 
 
