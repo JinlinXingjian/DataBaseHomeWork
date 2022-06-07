@@ -1,3 +1,4 @@
+const { del } = require('express/lib/application')
 const db = require('../db/index')
 
 exports.look = (req, res) => {
@@ -11,15 +12,13 @@ exports.look = (req, res) => {
 
 exports.delete = (req, res) => {
   const delInfo = req.body
+
+  const sql = "delete from 车辆 where ?"
+
   console.log(delInfo)
 
-  const sql = "delete from 车辆 where ? = ?"
-
-  db.query(sql, [delInfo.sort, delInfo.spe], (err, results) => {
+  db.query(sql, delInfo, (err, results) => {
     if(err) return res.cc(err)
-
-
-    console.log(results)
     res.cc('记录删除成功', '0')
   })
 
@@ -27,20 +26,32 @@ exports.delete = (req, res) => {
 
 //更新处理
 exports.update = (req, res) => {
-  console.log(req)
-
-
   const upInfo = req.body
 
-  const sql = "update 车辆 set ? = ? where ? = ?"
+  console.log(upInfo)
 
-  //请求数据依次是要更新的属性， 更新的值，条件属性，条件值
-  db.query(sql, [upInfo.newsort, upInfo.newspe, upInfo.sort, upInfo.spe], (err, results) => {
+  const sql = "update 车辆 set ? where 车辆编号 = ?"
+
+  db.query(sql, [upInfo, upInfo.车辆编号], (err, results) => {
     if(err) return res.cc(err)
 
     console.log(results)
     res.cc('记录更新成功', '0')
   })
+}
+
+exports.add = (req, res) => {
+  const addInfo = req.body
+  console.log(addInfo)
+
+  const sql = "insert into 车辆 values ('',?,?,?,?)"
+
+  db.query(sql, [addInfo.车牌号, addInfo.车辆品牌, addInfo.车身颜色, addInfo.车主编号], (err, results) => {
+    if(err) return res.cc(err)
+    console.log(results)
+    res.cc('记录添加成功', '0')
+  })
+
 
 
 }
