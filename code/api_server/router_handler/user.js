@@ -48,12 +48,16 @@ exports.logUser = (req, res) => {
     return res.cc('用户名或密码不能为空')
   }
 
+  if (userinfo.password.length < 6 || userinfo.password.length > 16) {
+    return res.cc('密码应在8到16位之间')
+  }
+
   const sql = 'select * from admins where username = ?';
 
   db.query(sql, userinfo.username, (err, results) => {
     //错误处理
     if (err) return res.cc(err)
-    if (results.length !== 1) res.cc('密码错误')
+    if (results.length !== 1) res.cc('未知错误')
 
     const compareResult = bcrypt.compareSync(userinfo.password, results[0].password)
   
