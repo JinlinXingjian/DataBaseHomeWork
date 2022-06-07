@@ -32,32 +32,54 @@ body{
 }
 form{
     position: absolute;
-    top: 20%;
+    top: 25%;
     background-color: rgba(255, 255, 255, 0.4);
     width: 40vw;
-    height: 40vh;
     text-align: center;
     border-radius: 25px;
+    /*使用flex布局*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
 }
 form>p{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bolder;
     color: #fff;
+    transition: all 0.5s;
+}
+form>p:hover{
+    color: #000;
 }
 input{
-    position: relative;
-    top: 2vh;
     width: 25vw;
     height: 4vh;
     margin: 1vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
     background-color: rgba(255, 255, 255, 0.4);
     border: 0px;
     border-radius: 10px;
     font-size: 15px;
+
+    transition: all 0.5s;
+}
+input:hover{
+    transform: scale(1.1);
 }
 input:focus{
     outline: none;
 }
 #passWordSubmit{
-    width: 10vw;
+    width: 30%;
+    color: #fff;
+    font-size: 15px;
+    line-height: 4vh;
+    
+    transition: all 0.5s;
+    margin-bottom: 5vh;
+}
+#passWordSubmit:hover{
+    color: rgb(10, 10, 10);
 }

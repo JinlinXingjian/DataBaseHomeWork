@@ -23,5 +23,6 @@ window.onload=function(){
 		}
     }
     xmlhttp.open("GET",ip+"/cars/look",true);
+    // xmlhttp.open('get',ip+"/database",false);
 	xmlhttp.send();
 }
