@@ -16,6 +16,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 
+
+
 //在路由之前封装 res.cc state默认值为1 err的值可能是错误对象，也可能是个string
 app.use((req, res, next) => {
   res.cc = (err, state = 1) => {
