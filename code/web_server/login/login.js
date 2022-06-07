@@ -29,10 +29,14 @@ window.onload=function(){
         //获取后端发来的响应中的内容，并将其转换为json对象
         let test=JSON.parse(xmlhttp.responseText);
         console.log(test);
-        // alert("服务器端状态码: "+test.message);
-        //如果后端发来的状态码为0，则跳转到百度
+        console.log(document.cookie);
+
+        document.cookie="Authorization="+test.token+";path=/";
+
+        console.log(document.cookie);
+        //如果后端发来的状态码为0，则跳转到首页
         if(test.state==0){
-            location.href="http://www.baidu.com";
+            location.href="../index/index.html";
         }
     });
 }
