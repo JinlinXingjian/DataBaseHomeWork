@@ -11,7 +11,7 @@ exports.look = (req, res) => {
 exports.delete = (req, res) => {
   const delInfo = req.body
   console.log(delInfo)
-  const sql = "delete from 车主 where ?"
+  const sql = "delete from 车位 where ?"
 
   db.query(sql, delInfo, (err, results) => {
     if(err) return res.cc(err)
