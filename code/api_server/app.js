@@ -28,10 +28,14 @@ app.use((req, res, next) => {
 })
 
 
+
+
 //解析token中间件
 const expressJwt = require('express-jwt')
 //api开头的无需身份验证 即登录注册无需身份认证，请求时需要
 app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
+
+
 
 
 //引入路由
@@ -50,8 +54,10 @@ app.use('/log', logRouter)
 
 //全局错误捕获
 app.use((err, req, res, next) => {
-  if(err.name = 'UnauthorizedError') return res.cc('身份认证失败')
-
+  if(err.name = 'UnauthorizedError') return res.send({
+    'state' : '1',
+    'message':'身份认证失败'
+  })
 })
 
 
