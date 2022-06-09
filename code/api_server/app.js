@@ -13,6 +13,8 @@ app.use(cors())
 app.use(express.urlencoded({extended:false}))
 
 //json 处理的中间件
+
+
 app.use(express.json())
 
 
@@ -28,13 +30,10 @@ app.use((req, res, next) => {
 })
 
 
-
-
 //解析token中间件
 const expressJwt = require('express-jwt')
 //api开头的无需身份验证 即登录注册无需身份认证，请求时需要
 app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
-
 
 
 
