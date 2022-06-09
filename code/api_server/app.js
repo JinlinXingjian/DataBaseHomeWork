@@ -54,11 +54,15 @@ app.use('/log', logRouter)
 //全局错误捕获
 app.use((err, req, res, next) => {
   if(err.name = 'UnauthorizedError') return res.send({
-    'state' : '1',
-    'message':'身份认证失败'
+    state : '1',
+    message : '身份认证失败'
+  })
+
+  if(err) return res.send({
+    state:'1',
+    message:'未知错误'
   })
 })
-
 
 
 //服务器启动
