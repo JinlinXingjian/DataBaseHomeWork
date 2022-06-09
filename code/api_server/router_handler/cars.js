@@ -10,6 +10,7 @@ exports.look = (req, res) => {
   })
 }
 
+
 exports.delete = (req, res) => {
   const delInfo = req.body
 
@@ -21,8 +22,8 @@ exports.delete = (req, res) => {
     if(err) return res.cc(err)
     res.cc('记录删除成功', '0')
   })
-
 }
+
 
 //更新处理
 exports.update = (req, res) => {
