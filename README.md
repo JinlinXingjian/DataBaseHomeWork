@@ -52,13 +52,13 @@
 
 
 
-<img src="资料\imgs\Snipaste_2022-06-09_23-20-05.png" alt="Snipaste_2022-06-09_23-20-05" style="zoom: 80%;" />
+<img src="/资料/imgs/Snipaste_2022-06-09_23-20-05.png" alt="Snipaste_2022-06-09_23-20-05" style="zoom: 80%;" />
 
 
 
 #### 视图一览
 
-![Snipaste_2022-06-09_23-22-41](资料\imgs\Snipaste_2022-06-09_23-22-41.png)
+![Snipaste_2022-06-09_23-22-41](/资料/imgs/Snipaste_2022-06-09_23-22-41.png)
 
 
 
@@ -101,7 +101,7 @@ begin
 
 #### 项目结构
 
-![Snipaste_2022-06-09_23-38-55](资料\imgs\Snipaste_2022-06-09_23-38-55.png)
+![Snipaste_2022-06-09_23-38-55](/资料/imgs/Snipaste_2022-06-09_23-38-55.png)
 
 #### 部分代码
 
@@ -159,14 +159,13 @@ app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
 
 #### 项目结构
 
-![Snipaste_2022-06-09_23-43-48](资料\imgs\Snipaste_2022-06-09_23-43-48.png)
+![Snipaste_2022-06-09_23-43-48](/资料/imgs/Snipaste_2022-06-09_23-43-48.png)
 
 
 
 
 
 #### 部分代码
-
 
 
 
