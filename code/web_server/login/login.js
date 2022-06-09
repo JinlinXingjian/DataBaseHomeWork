@@ -12,6 +12,7 @@ window.onload=function(){
     submit.addEventListener('click',function(){
         xmlhttp.open("post",Window.myConfig.ip+"/api/login",false);
         //监听文本框中的内容
+        console.log(username);
         if(username.focus){
             json.username=username.value;
         }
@@ -32,11 +33,13 @@ window.onload=function(){
         console.log(document.cookie);
 
         document.cookie="Authorization="+test.token+";path=/";
+        document.cookie="userName="+json.username+";path=/";
 
         console.log(document.cookie);
         //如果后端发来的状态码为0，则跳转到首页
         if(test.state==0){
             location.href="../index/index.html";
         }
+        
     });
 }
