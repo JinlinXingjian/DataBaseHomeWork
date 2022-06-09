@@ -1,4 +1,4 @@
-const { del } = require('express/lib/application')
+//引入数据库配置
 const db = require('../db/index')
 
 exports.look = (req, res) => {
@@ -10,7 +10,7 @@ exports.look = (req, res) => {
   })
 }
 
-
+//车辆删除处理函数
 exports.delete = (req, res) => {
   const delInfo = req.body
   console.log(delInfo)
@@ -23,7 +23,7 @@ exports.delete = (req, res) => {
 }
 
 
-//更新处理
+//车辆更新处理函数
 exports.update = (req, res) => {
   const upInfo = req.body
 
@@ -39,6 +39,7 @@ exports.update = (req, res) => {
   })
 }
 
+//车辆添加处理函数
 exports.add = (req, res) => {
   const addInfo = req.body
   console.log(addInfo)

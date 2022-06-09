@@ -1,5 +1,7 @@
+//引入数据库配置
 const db = require('../db/index')
 
+//车位查看处理函数
 exports.look = (req, res) => {
   const sql = "select * from 车位"
 
@@ -8,6 +10,7 @@ exports.look = (req, res) => {
   })
 }
 
+//车位删除处理函数
 exports.delete = (req, res) => {
   const delInfo = req.body
   console.log(delInfo)
@@ -17,9 +20,9 @@ exports.delete = (req, res) => {
     if(err) return res.cc(err)
     res.cc('记录删除成功', '0')
   })
-
 }
 
+//车位更新处理函数
 exports.update = (req, res) => {
   const upInfo = req.body
   console.log(upInfo)
@@ -32,9 +35,9 @@ exports.update = (req, res) => {
     console.log(results)
     res.cc('记录更新成功', '0')
   })
-
 }
 
+//车位添加处理函数
 exports.add = (req, res) => {
   const addInfo = req.body
   console.log(addInfo)
@@ -46,6 +49,4 @@ exports.add = (req, res) => {
     console.log(results)
     res.cc('记录添加成功', '0')
   })
-
 }
-
