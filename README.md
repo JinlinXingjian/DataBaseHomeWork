@@ -157,13 +157,43 @@ app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
 
 #### 项目结构
 
-![Snipaste_2022-06-09_23-43-48](/资料/imgs/Snipaste_2022-06-09_23-43-48.png)
+![Snipaste_2022-06-09_23-43-48](/资料/imgs/1.png)
 
 
 
 
 
 #### 部分代码
+
+```javascript
+function cancelUser(){
+        //删除user
+        let button=document.querySelectorAll(".cancel");
+        let tr=document.querySelectorAll("tr");
+        //按下选中的按钮，选中相应的行的第一列的编号
+        for(let i=0;i<button.length;i++){
+            button[i].addEventListener('click',function(){
+                //启动http链接
+                xmlhttp.open('post',ip+'/master/delete',false);
+                //设置utf8编码
+                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                //设置服务器访问token信息
+                xmlhttp.setRequestHeader("Authorization",getCookie("Authorization"));
+                //封装信息并发送
+                let json={
+                    车主编号: tr[i+1].cells[0].innerHTML
+                };
+                xmlhttp.send(JSON.stringify(json));
+                //如果服务器返回的状态码为0，则为删除成功
+                if(xmlhttp.responseText.state="0"){
+                    alert("删除成功");
+                }
+                //重新加载表格
+                showUser(e);
+            })
+        }
+    }
+```
 
 
 
