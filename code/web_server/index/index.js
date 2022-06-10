@@ -20,7 +20,7 @@ window.onload=function(e){
                 "性别":"",
                 "年龄":"",
                 "地址":"",
-                "电话":""
+                "联系电话":""
             }
             let form=document.createElement("form");
 
@@ -47,14 +47,14 @@ window.onload=function(e){
 
             let tellphone=document.createElement("input",);
             tellphone.setAttribute("type","text");
-            tellphone.setAttribute("placeholder","请输入电话");
+            tellphone.setAttribute("placeholder","请输入联系电话");
             form.appendChild(tellphone);
 
             let submit=document.createElement("input",);
             submit.setAttribute("type","submit");
             form.appendChild(submit);
 
-            submit.addEventListener("click",function(){
+            submit.addEventListener("click",function(e){
                 //按下提交按钮，检查输入框中的值封装并提交
                 if(username.focus){
                     json.姓名=username.value;
@@ -63,7 +63,7 @@ window.onload=function(e){
                     json.性别=sex.value;
                 }
                 if(tellphone.focus){
-                    json.电话=tellphone.value;
+                    json.联系电话=tellphone.value;
                 }
                 if(address.focus){
                     json.地址=address.value;
