@@ -37,6 +37,7 @@ const carsRouter = require('./router/cars')
 const masterRouter = require('./router/master')
 const PSpacesRouter = require('./router/ParkingSpaces')
 const logRouter = require('./router/log')
+const viewsRouter = require('./router/views')
 
 //注册路由
 app.use('/api', userRouter)
@@ -44,6 +45,7 @@ app.use('/cars', carsRouter)
 app.use('/master', masterRouter)
 app.use('/PSpaces', PSpacesRouter)
 app.use('/log', logRouter)
+app.use('/views', viewsRouter)
 
 
 //全局错误捕获
