@@ -34,7 +34,7 @@
 
 #### ER图
 
-<img src="/资料/ER图.jpg" alt="图片alt" title="图片title" style="width: 65%">
+<img src="/资料/E-R图.png" alt="图片alt" title="图片title" style="width: 65%">
 
 
 
@@ -42,7 +42,7 @@
 
 #### 分解的关系模式
 
-![关系模式](/资料/relationMoudle.png)
+![关系模式](/资料/关系模式.png)
 
 
 
