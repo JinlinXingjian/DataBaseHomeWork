@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 09/06/2022 16:31:16
+ Date: 16/06/2022 19:28:26
 */
 
 SET NAMES utf8mb4;
@@ -31,11 +31,9 @@ CREATE TABLE `出入记录`  (
   `车位编号` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`记录编号`) USING BTREE,
   UNIQUE INDEX `出入记录_记录编号_uindex`(`记录编号`) USING BTREE,
-  INDEX `f_1`(`车辆编号`) USING BTREE,
   INDEX `f_2`(`车位编号`) USING BTREE,
-  CONSTRAINT `f_1` FOREIGN KEY (`车辆编号`) REFERENCES `车辆` (`车辆编号`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `f_2` FOREIGN KEY (`车位编号`) REFERENCES `车位` (`车位编号`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  INDEX `f_1`(`车辆编号`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 出入记录
@@ -66,7 +64,6 @@ INSERT INTO `出入记录` VALUES (23, '2022-05-28 16:12:25', '2022-05-28 22:19:
 INSERT INTO `出入记录` VALUES (24, '2022-05-29 02:10:27', '2022-05-29 04:45:49', 1.29, '否', 20, 3);
 INSERT INTO `出入记录` VALUES (25, '2022-06-02 08:11:27', '2022-06-02 17:08:59', 8.96, '是', 4, 18);
 INSERT INTO `出入记录` VALUES (26, '2022-06-19 10:57:04', '2022-06-19 18:51:35', 3.95, '否', 13, 9);
-INSERT INTO `出入记录` VALUES (27, '2022-06-26 08:31:01', '2022-06-26 10:28:33', 0.98, '否', 1, 6);
 INSERT INTO `出入记录` VALUES (28, '2022-07-02 03:32:30', '2022-07-03 03:25:20', 11.94, '否', 20, 4);
 INSERT INTO `出入记录` VALUES (29, '2022-07-07 12:37:54', '2022-07-08 13:55:04', 12.64, '否', 4, 4);
 INSERT INTO `出入记录` VALUES (30, '2022-07-11 06:10:00', '2022-07-11 14:44:31', 8.58, '是', 6, 11);
@@ -75,10 +72,8 @@ INSERT INTO `出入记录` VALUES (32, '2022-07-18 12:52:24', '2022-07-18 19:16:
 INSERT INTO `出入记录` VALUES (33, '2022-07-18 21:53:03', '2022-07-19 05:44:23', 7.86, '否', 7, 11);
 INSERT INTO `出入记录` VALUES (34, '2022-07-20 11:17:17', '2022-07-28 18:58:26', 99.84, '否', 4, 9);
 INSERT INTO `出入记录` VALUES (35, '2022-07-20 23:11:08', '2022-07-20 23:40:35', 0.49, '否', 18, 12);
-INSERT INTO `出入记录` VALUES (36, '2022-07-21 12:48:03', '2022-07-23 20:08:01', 27.67, '是', 1, 5);
 INSERT INTO `出入记录` VALUES (37, '2022-07-23 16:31:13', '2022-07-24 00:36:51', 8.09, '否', 14, 12);
 INSERT INTO `出入记录` VALUES (38, '2022-08-03 21:29:26', '2022-08-03 22:04:40', 0.29, '是', 7, 2);
-INSERT INTO `出入记录` VALUES (39, '2022-08-21 18:39:21', '2022-08-22 01:36:41', 3.48, '否', 1, 2);
 INSERT INTO `出入记录` VALUES (40, '2022-09-03 12:38:06', '2022-09-03 13:43:57', 1.1, '是', 8, 13);
 INSERT INTO `出入记录` VALUES (41, '2022-09-09 06:45:17', '2022-09-09 08:31:16', 2.65, '否', 5, 24);
 INSERT INTO `出入记录` VALUES (42, '2022-09-13 14:33:04', '2022-09-13 22:10:34', 7.62, '是', 4, 16);
@@ -90,6 +85,14 @@ INSERT INTO `出入记录` VALUES (47, '2022-10-16 23:51:57', '2022-10-18 05:50:
 INSERT INTO `出入记录` VALUES (48, '2022-11-07 15:53:24', '2022-11-07 21:42:35', 2.91, '否', 11, 3);
 INSERT INTO `出入记录` VALUES (49, '2022-11-28 20:39:01', '2022-11-28 22:28:50', 1.83, '是', 19, 18);
 INSERT INTO `出入记录` VALUES (50, '2022-12-07 00:08:43', '2022-12-08 07:50:31', 15.85, '否', 10, 6);
+INSERT INTO `出入记录` VALUES (51, '2022-09-28 04:00:14', '2022-09-28 11:25:56', 7.43, '否', 18, 19);
+INSERT INTO `出入记录` VALUES (52, '2022-09-28 06:12:53', '2022-09-28 12:00:32', 2.9, '否', 4, 7);
+INSERT INTO `出入记录` VALUES (53, '2022-10-03 04:03:22', '2022-10-03 06:38:46', 1.3, '是', 3, 7);
+INSERT INTO `出入记录` VALUES (54, '2022-10-07 20:00:29', '2022-10-08 03:15:39', 3.63, '否', 4, 1);
+INSERT INTO `出入记录` VALUES (55, '2022-10-16 23:51:57', '2022-10-18 05:50:07', 14.98, '是', 20, 1);
+INSERT INTO `出入记录` VALUES (56, '2022-11-07 15:53:24', '2022-11-07 21:42:35', 2.91, '否', 11, 3);
+INSERT INTO `出入记录` VALUES (57, '2022-11-28 20:39:01', '2022-11-28 22:28:50', 1.83, '是', 19, 18);
+INSERT INTO `出入记录` VALUES (58, '2022-12-07 00:08:43', '2022-12-08 07:50:31', 15.85, '否', 10, 6);
 
 -- ----------------------------
 -- Table structure for 车主
@@ -102,7 +105,8 @@ CREATE TABLE `车主`  (
   `年龄` smallint(6) NULL DEFAULT NULL,
   `地址` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `联系电话` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`车主编号`) USING BTREE
+  PRIMARY KEY (`车主编号`) USING BTREE,
+  UNIQUE INDEX `车主_车主编号_uindex`(`车主编号`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -129,14 +133,14 @@ INSERT INTO `车主` VALUES (15, '李某', '男', 26, '旮旯屯小区3栋', '18
 -- ----------------------------
 DROP TABLE IF EXISTS `车位`;
 CREATE TABLE `车位`  (
-  `车位编号` int(11) NOT NULL,
+  `车位编号` int(11) NOT NULL AUTO_INCREMENT,
   `收费标准` float NULL DEFAULT NULL,
   `占用情况` enum('是','否') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `车主编号` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`车位编号`) USING BTREE,
   INDEX `f_k1`(`车主编号`) USING BTREE,
-  CONSTRAINT `f_k1` FOREIGN KEY (`车主编号`) REFERENCES `车主` (`车主编号`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  CONSTRAINT `f_k1` FOREIGN KEY (`车主编号`) REFERENCES `车主` (`车主编号`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 车位
@@ -161,10 +165,6 @@ INSERT INTO `车位` VALUES (17, 1, '否', 5);
 INSERT INTO `车位` VALUES (18, 1, '是', 7);
 INSERT INTO `车位` VALUES (19, 1, '否', 15);
 INSERT INTO `车位` VALUES (20, 1, '否', NULL);
-INSERT INTO `车位` VALUES (21, 1.5, '否', NULL);
-INSERT INTO `车位` VALUES (22, 1.5, '否', NULL);
-INSERT INTO `车位` VALUES (23, 1.5, '否', NULL);
-INSERT INTO `车位` VALUES (24, 1.5, '否', 8);
 INSERT INTO `车位` VALUES (25, 1.5, '是', 8);
 
 -- ----------------------------
@@ -181,12 +181,12 @@ CREATE TABLE `车辆`  (
   UNIQUE INDEX `车辆_车辆编号_uindex`(`车辆编号`) USING BTREE,
   INDEX `fk_1`(`车主编号`) USING BTREE,
   CONSTRAINT `fk_1` FOREIGN KEY (`车主编号`) REFERENCES `车主` (`车主编号`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of 车辆
 -- ----------------------------
-INSERT INTO `车辆` VALUES (1, '贵B22655', '劳斯莱斯', '白', 3);
+INSERT INTO `车辆` VALUES (1, '贵B22647', '大众', '红', 1);
 INSERT INTO `车辆` VALUES (2, '贵B22648', '凯迪拉克', '黑', 7);
 INSERT INTO `车辆` VALUES (3, '贵B22649', '法拉利', '红', 3);
 INSERT INTO `车辆` VALUES (4, '贵B22650', '五菱宏光', '银', 6);
@@ -206,9 +206,6 @@ INSERT INTO `车辆` VALUES (17, '贵B22663', '比亚迪', '银', 7);
 INSERT INTO `车辆` VALUES (18, '贵B22664', '大众', '红', 15);
 INSERT INTO `车辆` VALUES (19, '贵B22665', '丰田', '红', 8);
 INSERT INTO `车辆` VALUES (20, '贵B22666', '大众', '白', 8);
-INSERT INTO `车辆` VALUES (21, '贵B22664', '大众', '红', 15);
-INSERT INTO `车辆` VALUES (22, '贵B22665', '丰田', '红', 8);
-INSERT INTO `车辆` VALUES (23, '贵B22666', '大众', '白', 8);
 
 -- ----------------------------
 -- Table structure for admins
