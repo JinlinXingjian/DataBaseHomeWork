@@ -42,7 +42,7 @@ exports.view5 = (req, res) => {
 
   db.query(sql, (err, results) => {
     if (err) return res.cc(err)
-    res.send(results)
+    res.send(results);
   })
 }
 

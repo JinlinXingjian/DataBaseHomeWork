@@ -6,10 +6,12 @@ window.onload=function(e){
     let cars=document.querySelector('#cars');
     let parking=document.querySelector('#parking');
     let record=document.querySelector('#record');
+    let test=document.querySelector("#test");
     user.addEventListener('click',showUser);
     cars.addEventListener('click',showCars);
     parking.addEventListener('click',showParking);
     record.addEventListener('click',showRecord);
+    test.addEventListener("click",showTest);
     function showUser(e){
         //阻止a标签的默认行为
         e.preventDefault();
@@ -257,6 +259,31 @@ window.onload=function(e){
             }
         }
             xmlhttp.open("GET",ip+"/log/look",false);
+            xmlhttp.setRequestHeader("Authorization",getCookie("Authorization"));
+            xmlhttp.send();
+    }
+    function showTest(e){
+        //阻止a标签的默认行为
+        e.preventDefault();
+        //当成功获取到数据时，开始生成table表格
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {//将后端发来的json字符串转化为json对象
+                let res_json=JSON.parse(xmlhttp.responseText);
+                let table="<table>";
+                table+="<tr><td>车主编号</td><td>姓名</td><td>记录编号</td></tr>"
+                for(let i=0;i<res_json.length;i++){
+                    table+="<tr>"
+                    +"<td>"+res_json[i].车主编号+"</td>"
+                    +"<td>"+res_json[i].姓名+"</td>"
+                    +"<td>"+res_json[i].记录编号+"</td>"
+                    +"</tr>"
+                }
+                table+="</table>";
+                document.getElementById("main").innerHTML=table;
+            }
+        }
+            xmlhttp.open("GET",ip+"/views/view5",false);
             xmlhttp.setRequestHeader("Authorization",getCookie("Authorization"));
             xmlhttp.send();
     }

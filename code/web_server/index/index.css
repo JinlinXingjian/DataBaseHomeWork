@@ -88,6 +88,7 @@ a:nth-child(4):hover>img{
     content: url(../public/img/record_hover.png);
 }
 .user{
+    flex-grow: 1;
     text-align: center;
     align-items:center;
     width: 50vw;

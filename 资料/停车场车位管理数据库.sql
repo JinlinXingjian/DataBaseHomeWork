@@ -13,7 +13,9 @@
 
  Date: 16/06/2022 19:28:26
 */
-
+drop database 停车场车位管理数据库;
+create database 停车场车位管理数据库;
+use 停车场车位管理数据库;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
