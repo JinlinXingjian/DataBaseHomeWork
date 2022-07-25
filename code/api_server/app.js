@@ -24,7 +24,6 @@ app.use((req, res, next) => {
   next()
 })
 
-
 //解析token中间件
 const expressJwt = require('express-jwt')
 //api开头的无需身份验证 即登录注册无需身份认证，请求时需要
@@ -33,19 +32,9 @@ app.use(expressJwt({secret:config.key}).unless({path:[/^\/api\//] }))
 
 //引入路由
 const userRouter = require('./router/user');
-const carsRouter = require('./router/cars')
-const masterRouter = require('./router/master')
-const PSpacesRouter = require('./router/ParkingSpaces')
-const logRouter = require('./router/log')
-const viewsRouter = require('./router/views')
 
 //注册路由
 app.use('/api', userRouter)
-app.use('/cars', carsRouter)
-app.use('/master', masterRouter)
-app.use('/PSpaces', PSpacesRouter)
-app.use('/log', logRouter)
-app.use('/views', viewsRouter)
 
 
 //全局错误捕获
