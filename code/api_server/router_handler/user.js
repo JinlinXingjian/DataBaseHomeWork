@@ -13,7 +13,7 @@ exports.regUser = (req, res) => {
     return res.cc('密码应在8到16位之间')
   }
   //判断是否占用用户名
-  const sql = 'select * from users where username=?;'
+  const sql = 'select * from admins where username=?;'
 
   db.query(sql, [userinfo.username], function (err, results) {
     // 执行 SQL 语句失败
@@ -28,7 +28,7 @@ exports.regUser = (req, res) => {
     userinfo.password = bcrypt.hashSync(userinfo.password, 10)
     //插入新用户
 
-    const sql = 'insert into users set ?'
+    const sql = 'insert into admins set ?'
     db.query(sql, { username: userinfo.username, password: userinfo.password }, (err, results) => {
       //判断sql语句是否成功
       if (err) return res.cc(err)
@@ -52,7 +52,7 @@ exports.logUser = (req, res) => {
     return res.cc('密码应在8到16位之间')
   }
 
-  const sql = 'select * from users where username = ?';
+  const sql = 'select * from admins where username = ?';
 
   db.query(sql, userinfo.username, (err, results) => {
     //错误处理
